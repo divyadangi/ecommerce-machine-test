@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #ccc;
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 60px 80px;
+    color: #ccc;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+.footer h4 {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer p,
+.footer li {
+    font-size: 13px;
+    line-height: 1.8;
+    list-style: none;
+}
+
+.footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer a {
+    color: #7CFF00;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.highlight {
+    color: #7CFF00;
+}
+
+/* Purchase popup */
+.popup {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #fff;
+    color: #000;
+    width: 260px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    font-size: 13px;
+    z-index: 999;
+}
+
+.popup-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.stars {
+    color: gold;
+    font-size: 12px;
+}
+
+.price {
+    float: right;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.popup-footer {
+    font-size: 11px;
+    color: #ebe4e4;
+    margin-top: 8px;
+}
+
+/* =====================
+   RESPONSIVE BREAKPOINTS
+   ===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 50px 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer h4 {
+        font-size: 16px;
+    }
+
+    .footer p,
+    .footer li {
+        font-size: 14px;
+    }
+
+    .popup {
+        left: 50%;
+        bottom: 15px;
+        transform: translateX(-50%);
+        width: calc(100% - 30px);
+        max-width: 320px;
+    }
+}
+.contact-item i {
+  color: #e6e8ec; /* Bootstrap primary */
+  font-size: 18px;
+  margin-top: 3px;
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Apple Macbook Pro 2019 MVV2Z5/A",
+    "price": 2013.54,
+    "category": "Technology",
+    "offer": "New",
+    "vendor": "Co., Ltd Minie Li",
+    "images": [""]
+  },
+  {
+    "id": 2,
+    "title": "Apple Watch Series 5 MWV62VN/A",
+    "price": 517.79,
+    "category": "Watch",
+    "offer": "Favorite",
+    "vendor": "24/7 Store",
+  "images": [""]
+  },
+  {
+    "id": 3,
+    "title": "Apple Macbook Air MWTJ2SA/A",
+    "price": 1099,
+    "category": "Technology",
+    "offer": "-15%",
+    "vendor": "Impime Calculator",
+    "images": [""]
+  },
+  {
+    "id": 4,
+    "title": "Hand Watch Rossini 5935T06",
+    "price": 193.31,
+    "category": "Watch",
+    "offer": "Sold Out",
+    "vendor": "Co., Ltd Minie Li",
+   "images": [""]
+  },
+  {
+    "id": 5,
+    "title": "Apartment for Rent",
+    "price": 2500,
+    "category": "Real Estate",
+    "offer": "New",
+    "vendor": "Flower Real Estate",
+  "images": [""]
+  }
+]

@@ -1,0 +1,25 @@
+<div class="cart-container" *ngIf="cartItems.length; else emptyCart">
+  <div class="cart-card" *ngFor="let item of cartItems">
+    <!-- <img [src]="item.thumbnail" alt="{{ item.title }}" /> -->
+
+    <div class="cart-details">
+      <h3>{{ item.title }}</h3>
+      <p class="brand">{{ item.brand }}</p>
+      <p class="price">₹ {{ item.price }}</p>
+      <p class="stock">{{ item.availabilityStatus }}</p>
+
+      <button (click)="removeFromCart(item.id)">
+        Remove
+      </button>
+    </div>
+  </div>
+
+  <h2 class="total">
+    Total: ₹ {{ totalPrice | number:'1.2-2' }}
+  </h2>
+
+</div>
+
+<ng-template #emptyCart>
+  <p class="empty">Your cart is empty </p>
+</ng-template>

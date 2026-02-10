@@ -1,0 +1,36 @@
+<!-- TOP BLACK BAR -->
+<div class="top-bar text-white py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="social-icons">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-linkedin"></i>
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-envelope"></i>
+    </div>
+
+    <div class="top-links">
+      Introduce · Partner Incentives · Promotion · Contact · FAQ
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar py-3">
+  <div class="container d-flex align-items-center gap-2">
+    <!-- <input class="form-control" placeholder="What are you looking for?" [(ngModel)]="search_query"/> -->
+    <input class="form-control" placeholder="What are you looking for?" [(ngModel)]="search_query"
+      (input)="onSearch()" />
+    <select class="form-select w-auto">
+      <option>Category</option>
+    </select>
+    <button class="btn btn-success" (click)="onSearch()">Search</button>
+
+    <div class="ms-auto icons">
+      <i class="bi bi-heart"></i>
+
+      <i class="bi bi-cart position-relative" style="cursor: pointer" (click)="openCart()">
+        <span class="badge bg-danger">{{ cartCount }}</span>
+      </i>
+    </div>
+  </div>
+</div>

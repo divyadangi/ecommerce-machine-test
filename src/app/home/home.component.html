@@ -1,0 +1,281 @@
+<nav class="nav-bar">
+  <div class="container nav-inner">
+    <strong class="menu">Category</strong>
+    <a>Home</a>
+    <a>New Product</a>
+    <a>Promotion <span class="hot">HOT</span></a>
+    <a class="ms-auto">Track Your Order</a>
+    <a>Sign In / Register</a>
+  </div>
+</nav>
+
+<div class="container main-section">
+  <div class="row g-3">
+    <!-- LEFT CARD -->
+    <div class="col-lg-3">
+      <div class="left-card">
+        <small>Asus</small>
+        <h4>Supper Sale<br> Laptop Gaming</h4>
+
+        <button class="btn-green">Order Now</button>
+      </div>
+    </div>
+    <!-- CENTER-->
+    <div class="col-lg-6">
+      <div class="hero-card">
+        <div class="hero-content">
+          <small>New Product</small>
+          <h2>HAND WATCH<br>ROSSINI</h2>
+          <button class="btn-green">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="col-lg-3">
+      <div class="side-card mb-3">
+        <small>Big deal</small>
+        <h6>Black Friday<br>Buy 1 Get 1</h6>
+      </div>
+
+      <div class="side-card">
+        <small>Fujiwa</small>
+        <h6>ION Alkaline<br>Micronutrient Supplements</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM SMALL CARDS -->
+  <div class="row g-3 mt-2">
+    <div class="col">
+      <div class="bottom-card">
+        <small>Wine</small>
+        <p>Drunkenness<br>Deep Flavor</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="bottom-card">
+        <small>Cosmetic</small>
+        <p>MAXIMI<br>Sale 50%</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="bottom-card">
+        <small>Sunglasses</small>
+        <p>Authentic<br>Sale off 50%</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="bottom-card">
+        <small>Hand Wash</small>
+        <p>Clean hands<br>Clean bacteria</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="bottom-card">
+        <small>Fashion</small>
+        <p>Nice bag<br>Nice style</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- SHOP BY CATEGORIES -->
+<div class="container shop-section">
+
+  <!-- HEADER -->
+  <div class="shop-header">
+    <h5>Shop By Categories</h5>
+    <div class="see-all">
+      <a>See All</a>
+    </div>
+  </div>
+  <!-- <div class="container my-3">
+  <div class="row align-items-center">
+    <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Search products..." (input)="onSearch($event)" />
+    </div>
+  </div>
+</div> -->
+
+  <!-- CATEGORY LIST -->
+  <div class="category-row">
+    <div class="category-box" *ngFor="let cat of categorie" (click)="selectCategory(cat.name)"
+      [class.active]="selectedCategory === cat.name">
+      <i class="fa-solid fa-layer-group"></i>
+      <p>{{ cat.name }}</p>
+    </div>
+  </div>
+
+  <div class="category-wrapper">
+    <div class="category-section" *ngFor="let category of categorie" [hidden]="category.name !== selectedCategory">
+      <!-- Header -->
+      <div class="section-header">
+        <h3>{{ category.name }}</h3>
+
+        <div class="tabs">
+          <span *ngFor="let tab of category.tabs" [class.active]="tab === 'All'">
+            {{ tab }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let product of category.products">
+          <span class="badge" *ngIf="product.badge" [ngClass]="product.badgeType">
+            {{ product.badge }}
+          </span>
+
+          <!-- <div class="img-box">
+            <img [src]="product.image">
+          </div> -->
+
+          <h4>{{ product.title }}</h4>
+          <p class="price">{{ product.price }}</p>
+          <p class="by">by {{ product.by }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- promo-section.component.html -->
+<div class="promo-wrapper">
+  <div class="promo-container">
+    <!-- Left Card -->
+    <div class="promo-card">
+      <span class="tag">Hot Deal</span>
+      <h3>TOURS SAFE</h3>
+      <h4>TRUE DISCOUNT</h4>
+      <button>Order Now</button>
+    </div>
+    <!-- Right Card -->
+    <div class="promo-card">
+      <span class="tag">New Product</span>
+      <h3>EXPERIENCE TECHNOLOGY</h3>
+      <h4>RELAX HIGHTLY</h4>
+      <button>Order Now</button>
+    </div>
+  </div>
+</div>
+<!-- promo-product.component.html -->
+
+<div class="promo-product-wrapper">
+  <div class="promo-header">
+    <h3>Promo Product</h3>
+    <a class="see-all">See All</a>
+  </div>
+  <div class="promo-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <span class="discount">-{{ product.discount }}%</span>
+
+      <!-- Image -->
+      <!-- <div class="product-img">
+        <img [src]="product.image" alt="product">
+      </div> -->
+      <div class="product-info">
+        <h4>{{ product.name }}</h4>
+        <div class="price">
+          <span class="new">${{ product.price }}</span>
+          <span class="old">${{ product.oldPrice }}</span>
+        </div>
+        <div class="progress-text">
+          <span>Sold: {{ product.sold }}</span>
+          <span>In Stock: {{ product.stock }}</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" [style.width.%]="(product.sold / product.stock) * 100">
+          </div>
+        </div>
+        <div class="timer">
+          <div><strong>123</strong><span>Day</span></div>
+          <div><strong>42</strong><span>Hour</span></div>
+          <div><strong>00</strong><span>Min</span></div>
+          <div><strong>08</strong><span>Sec</span></div>
+        </div>
+        <button (click)="cartItem(product)">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- category-sections.component.html -->
+
+<div class="category-wrapper">
+  <div class="category-section" *ngFor="let category of categorie">
+    <div class="section-header">
+      <h3>{{ category.name }}</h3>
+
+      <div class="tabs">
+        <span *ngFor="let tab of category.tabs" [class.active]="tab === 'All'">
+          {{ tab }}
+        </span>
+      </div>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of category.products">
+        <span class="badge" [ngClass]="product.badgeType" *ngIf="product.badge">
+          {{ product.badge }}
+        </span>
+        <div class="img-box">
+          <img [src]="product.image" alt="">
+        </div>
+        <h4>{{ product.title }}</h4>
+        <p class="price">{{ product.price }}</p>
+        <p class="by">by {{ product.by }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SERVICE INFO SECTION -->
+<div class="container service-section">
+  <div class="row g-4 text-center">
+    <div class="col-md-4">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="1.6">
+            <rect x="1" y="3" width="15" height="13" rx="2"></rect>
+            <path d="M16 8h4l3 3v5h-7"></path>
+            <circle cx="5.5" cy="18.5" r="1.5"></circle>
+            <circle cx="18.5" cy="18.5" r="1.5"></circle>
+          </svg>
+        </div>
+        <h6>Free Shipping</h6>
+        <p>For invoices<br>over $1,500</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="1.6">
+            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M6 9h.01M18 15h.01"></path>
+          </svg>
+        </div>
+        <h6>Cash Back</h6>
+        <p>When paying for products<br>via Dasun Wallet</p>
+      </div>
+    </div>
+
+    <!-- Support -->
+    <div class="col-md-4">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="1.6">
+            <path d="M3 12a9 9 0 0118 0"></path>
+            <rect x="3" y="12" width="4" height="7" rx="2"></rect>
+            <rect x="17" y="12" width="4" height="7" rx="2"></rect>
+          </svg>
+        </div>
+        <h6>24/7 Support</h6>
+        <p>When something goes<br>wrong</p>
+      </div>
+    </div>
+  </div>
+</div>
